@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cas3server:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="cas3-server.war">
+      <element id="artifact" artifact-name="cas3server:war exploded" />
+    </root>
+  </artifact>
+</component>
