@@ -25,6 +25,7 @@
     <!--Google Fonts-->
     <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     --><!--Google Fonts-->
+    <script src="js/jquery/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
 <!--header start here-->
@@ -52,6 +53,9 @@
                 <form:password path="password" required="required" cssErrorClass="error" placeholder="密码" tabindex="2" htmlEscape="true" autocomplete="off" />
                 <div class="clear"> </div>
             </div>
+            <form:input cssClass="required" cssErrorClass="error" id="imgverifycode" path="imgverifycode" htmlEscape="true" autocomplete="off" placeholder="验证码" />
+            <img id="cimg" src="captchacode" onclick="refreshcaptchacode(this)" title="看不清？点击更换另一个。"/>
+
             <input type="hidden" name="lt" value="${loginTicket}" />
             <input type="hidden" name="execution" value="${flowExecutionKey}" />
             <input type="hidden" name="_eventId" value="submit" />
@@ -65,4 +69,9 @@
 </div>
 <!--header start here-->
 </body>
+<script type="text/javascript">
+    function refreshcaptchacode(obj) {
+        obj.setAttribute("src", "captchacode?date=" + new Date());
+    }
+</script>
 </html>
